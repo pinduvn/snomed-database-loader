@@ -4,3 +4,4 @@ tmp*
 .idea/
 .DS_Store
 *.zip
+PostgreSQL/RF2Release
