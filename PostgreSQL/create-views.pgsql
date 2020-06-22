@@ -5,7 +5,7 @@ CREATE VIEW view_concept AS
 select 
   -- row_number() over() as id,
   id as _id,
-  effectivetime,
+  to_date(effectivetime,'YYYYMMDD'),
   active,
   moduleid,
   definitionstatusid 
@@ -28,7 +28,7 @@ CREATE VIEW view_description AS
 select 
   -- row_number() over() as id,
   id as _id,
-  effectivetime,
+  to_date(effectivetime,'YYYYMMDD'),
   active,
   moduleid,
   conceptid,
@@ -61,7 +61,7 @@ CREATE VIEW view_relationship AS
 select
   -- row_number() over() as id,
   id as _id,
-  effectivetime,
+  to_date(effectivetime,'YYYYMMDD'),
   active,
   moduleid,
   sourceid,
@@ -105,4 +105,6 @@ select
   *
 from description_f
 where id = '1056432019';
+
+select to_date(effectivetime,'YYYYMMDD') from snomedct.description_f; 
 */

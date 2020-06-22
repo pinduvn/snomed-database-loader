@@ -9,10 +9,14 @@ class ProductoAdmin(admin.ModelAdmin):
     list_display = (
         'term_reducido',
     )
+    date_hierarchy = 'effectivetime'
     #ordering = ['term']  # -nombre escendente, nombre ascendente
-    search_fields = ['term']
+    search_fields = [
+        'term'
+        ]
     list_filter = (
         'languagecode',
+        'active',
     )
 
 

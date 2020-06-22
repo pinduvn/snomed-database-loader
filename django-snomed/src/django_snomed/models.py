@@ -64,7 +64,7 @@ class ComplexmaprefsetF(models.Model):
 
 class ConceptF(models.Model):
     _id = models.CharField(max_length=18)
-    effectivetime = models.CharField(max_length=8)
+    effectivetime = models.DateField()
     active = models.CharField(max_length=1)
     moduleid = models.CharField(max_length=18)
     definitionstatusid = models.CharField(max_length=18)
@@ -81,7 +81,7 @@ class ConceptF(models.Model):
 
 class DescriptionF(models.Model):
     _id = models.CharField(max_length=18)
-    effectivetime = models.CharField(max_length=8)
+    effectivetime = models.DateField()
     active = models.CharField(max_length=1)
     moduleid = models.CharField(max_length=18)
     conceptid = models.CharField(max_length=18)
@@ -93,6 +93,12 @@ class DescriptionF(models.Model):
     @property
     def term_reducido (self):
         return self.term[:500]
+
+    @property
+    def fecha (self):
+        from datetime import datetime
+        return datetime.strptime(self.effectivetime, '%y/%m/%d')
+
 
     class Meta:
         #managed = False
@@ -138,7 +144,7 @@ class LangrefsetF(models.Model):
 
 class RelationshipF(models.Model):
     _id = models.CharField(max_length=18)
-    effectivetime = models.CharField(max_length=8)
+    effectivetime = models.DateField()
     active = models.CharField(max_length=1)
     moduleid = models.CharField(max_length=18)
     sourceid = models.CharField(max_length=18)
