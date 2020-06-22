@@ -1,0 +1,18 @@
+{
+  "python.pythonPath": "/home/pindu/.virtualenvs/djangodev/bin/python",
+  "editor.formatOnSave": true,
+  "python.linting.pycodestyleEnabled": true,
+  "python.linting.pylintPath": "pylint",
+  "python.linting.pylintArgs": [
+    "--load-plugins",
+    "pylint_django"
+  ],
+  "python.linting.pylintEnabled": true,
+  "python.venvPath": "${workspaceFolder}/.virtualenvs/djangodev/bin/python",
+  "python.linting.pycodestyleArgs": [
+    "--ignore=E501"
+  ],
+  "files.exclude": {
+    "**/*.pyc": true
+  }
+}
